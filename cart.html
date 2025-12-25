@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-section">
+            <img src="images/logo.png" class="logo-img">
+            <p class="logo-text">ToyGalaxy</p>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="toyspage.html" class="nav-item">Toys</a>
+            <a href="cart.html" class="nav-item active">Cart</a>
+        </div>
+        <div class="auth-section">
+            <div class="auth-links" id="authButtons">
+                <a href="signin.html">Sign in</a>
+                <a href="signup.html">Sign up</a>
+            </div>
+            <div class="user-section hidden" id="userSection">
+                <div class="avatar" id="userIcon" onclick="toggleDropdown()"></div>
+                <div class="dropdown hidden" id="dropdown">
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+        <div id="cartList"></div>
+        <p id="emptyCartMsg" class="hidden">Your cart is empty. Browse toys and add something fun!</p>
+        <div id="cartSummary" class="hidden">
+            <p>Total: ₹<span id="totalAmount">0</span></p>
+            <button id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <h2 class="footer-text">
+            Made with 💖 for little dreamers
+        </h2>
+        <div class="social-icons">
+            <a href="#"><img src="images/Facebooklogo.png" alt="Facebook"></a>
+            <a href="#"><img src="images/InstagramLogo.webp" alt="Instagram"></a>
+            <a href="#"><img src="images/LinkedinLogo.png" alt="LinkedIn"></a>
+            <a href="#"><img src="images/xLogo.avif" alt="X"></a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookies Settings</a>
+            <a href="#">Terms and Conditions</a>
+        </div>
+        <p class="copyright">
+            ©2025 ToyGalaxy.com | All rights reserved
+        </p>
+    </footer>
+    <div id="orderModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeOrderModal()">&times;</span>
+
+            <div id="modalOrderCurrent">
+                <h2>Order Summary</h2>
+                <div style="margin: 20px 0; text-align: left;">
+                    <p>Total Items: <strong id="modalTotalItems">0</strong></p>
+                    <p>Total Amount: <strong style="font-size: 1.2em;">₹<span id="modalTotalAmount">0</span></strong>
+                    </p>
+                </div>
+                <button id="confirmOrderBtn" class="btn-primary" style="width: 100%;">Proceed</button>
+            </div>
+
+            <div id="modalOrderSuccess" class="hidden">
+                <div class="success-icon">🎉</div>
+                <h2>Order Placed Successfully!</h2>
+                <p>Order ID: <strong id="modalOrderId"></strong></p>
+                <div style="margin-top: 20px;">
+                    <button class="btn-primary" onclick="closeOrderModal()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cart.js"></script>
+
+</html>
