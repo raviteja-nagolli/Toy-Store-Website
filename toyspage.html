@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Toys Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo-section">
+            <img src="images/logo.png" class="logo-img">
+            <p class="logo-text">ToyGalaxy</p>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="toyspage.html" class="nav-item active">Toys</a>
+            <a href="cart.html" class="nav-item">Cart</a>
+        </div>
+
+        <div class="auth-section">
+            <div class="auth-links" id="authButtons">
+                <a href="signin.html">Sign in</a>
+                <a href="signup.html">Sign up</a>
+            </div>
+            <div class="user-section hidden" id="userSection">
+                <div class="avatar" id="userIcon" onclick="toggleDropdown()"></div>
+                <div class="dropdown hidden" id="dropdown">
+                    <button onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="page-container">
+        <div class="filter-container">
+            <h1 class="title">Refine By</h1>
+            <div class="filter">
+                <h2 onclick="toggleSection('cat')" class="filterh">Categories</h2>
+                <div id="cat" class="filter-content">
+                    <label><input type="checkbox" value="learning"> Learning Toys</label>
+                    <label><input type="checkbox" value="soft"> Soft Toys</label>
+                    <label><input type="checkbox" value="puzzle"> Puzzles</label>
+                    <label><input type="checkbox" value="car"> Cars</label>
+                    <label><input type="checkbox" value="doll"> Dolls</label>
+                </div>
+            </div>
+            <div class="filter">
+                <h2 onclick="toggleSection('age')" class="filterh">Age</h2>
+                <div id="age" class="filter-content">
+                    <label><input type="radio" name="age" value="0-2"> 0-2 Years</label>
+                    <label><input type="radio" name="age" value="3-5"> 3-5 Years</label>
+                    <label><input type="radio" name="age" value="6-10"> 6-10 Years</label>
+                    <label><input type="radio" name="age" value="10+"> 10+ Years</label>
+                </div>
+            </div>
+            <div class="filter">
+                <h2 onclick="toggleSection('price')" class="filterh">Price Range</h2>
+                <div id="price" class="filter-content">
+                    <input type="range" id="priceRange" min="100" max="5000" value="500" class="range">
+                    <p>Max Price: ₹<span id="priceValue">500</span></p>
+                </div>
+            </div>
+            <div class="filter">
+                <h2 onclick="toggleSection('rating')" class="filterh">Ratings</h2>
+                <div id="rating" class="filter-content">
+                    <label><input type="radio" name="rating" value="4.5"> ⭐⭐⭐⭐⭐ (4.5+)</label>
+                    <label><input type="radio" name="rating" value="4.0"> ⭐⭐⭐⭐ (4.0+)</label>
+                    <label><input type="radio" name="rating" value="3.5"> ⭐⭐⭐ (3.5+)</label>
+                </div>
+            </div>
+            <div class="filter">
+                <h2 onclick="toggleSection('sort')" class="filterh">Sort By</h2>
+                <div id="sort" class="filter-content">
+                    <label><input type="radio" name="sort" value="low"> Price: Low to High</label>
+                    <label><input type="radio" name="sort" value="high"> Price: High to Low</label>
+                </div>
+            </div>
+        </div>
+        <div class="toy-list" id="toyList"></div>
+    </div>
+    <footer class="footer">
+        <h2 class="footer-text">
+            Made with 💖 for little dreamers
+        </h2>
+        <div class="social-icons">
+            <a href="#"><img src="images/Facebooklogo.png" alt="Facebook"></a>
+            <a href="#"><img src="images/InstagramLogo.webp" alt="Instagram"></a>
+            <a href="#"><img src="images/LinkedinLogo.png" alt="LinkedIn"></a>
+            <a href="#"><img src="images/xLogo.avif" alt="X"></a>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookies Settings</a>
+            <a href="#">Terms and Conditions</a>
+        </div>
+        <p class="copyright">
+            ©2025 ToyGalaxy.com | All rights reserved
+        </p>
+    </footer>
+</body>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+
+</html>
